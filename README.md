@@ -2,15 +2,7 @@
 
 Welcome to **AI-tool**! This repository is a showcase of cutting-edge AI solutions crafted in pure Python. Whether you are a beginner or a seasoned developer, you'll find well-documented code examples, creative explanations, and a visually engaging experience here.
 
----
 
-## 🎨 Aesthetic Preview
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/1010611580/312313856-27c82000-5b24-11ee-9dee-1c9f9f9b69b2.png" alt="AI-tool Banner" style="border-radius: 18px; box-shadow: 0 0 24px #8ecae6;">
-</div>
-
----
 
 ## ✨ Features
 
@@ -135,11 +127,26 @@ def quiz_genrator():
 
 ```python
 def file_deleter():
-    print("Welcome to file deleter ...")
-    input_1 = input("Enter a file name ...")
-    ...
-    os.rmdir(r"C:\Users\Enter-your-username\Desktop/" + input_1)
-    ...
+        print("Welcome to file deleter from desktop.It can only delete 5 files.")
+
+        input_1 = input("Enter a file name which you want delete")
+        input_2 = input("Enter a file 2 name which you want delete")
+        input_3 = input("Enter a file 3 name which you want delete")
+        input_4 = input("Enter a file 4 name which you want delete")
+        input_5 = input("Enter a file 5 name which you want delete")
+
+        os.rmdir(
+            r"C:\Users\Enter-your-username\Desktop/" + input_1)  # replace this "Enter-your-username" into your actual username in your computer
+        os.rmdir(
+            r"C:\Users\Enter-your-username\Desktop/" + input_2)  # replace this "Enter-your-username" into your actual username in your computer
+        os.rmdir(
+            r"C:\Users\Enter-your-username\Desktop/" + input_3)  # replace this "Enter-your-username" into your actual username in your computer
+        os.rmdir(
+            r"C:\Users\Enter-your-username\Desktop/" + input_4)  # replace this "Enter-your-username" into your actual username in your computer
+        os.rmdir(
+            r"C:\Users\Enter-your-username\Desktop/" + input_5)  # replace this "Enter-your-username" into your actual username in your computer
+
+        # You can freely edit this code and the path in file deleter. 😀
 ```
 **Explanation:**  
 - Asks for up to 5 folder names to delete from Desktop.
@@ -152,22 +159,50 @@ def file_deleter():
 
 ```python
 def game():
-    print(''' <Treasure ASCII Art> ''')
-    print("Welcome to treasure island. ...")
-    first_input = input("Where you want to go? Left or Right: ").capitalize()
-    if first_input == "Left":
-        seconed_input = input(...).capitalize()
-        if seconed_input == "Wait":
-            third_output = input(...).capitalize()
-        ...
-        if third_output == "Yellow":
-            print("You Win!😎✨ The game is finished ...")
-        elif third_output == "Red":
-            print("Burned by fire. ...")
+        print(''' 
+        *******************************************************************************
+                  |                   |                  |                     |
+         _________|________________.=""_;=.______________|_____________________|_______
+        |                   |  ,-"_,=""     `"=.|                  |
+        |___________________|__"=._o`"-._        `"=.______________|___________________
+                  |                `"=._o`"=._      _`"=._                     |
+         _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+        |                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+        |___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+                  |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+         _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+        |                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+        |___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+        ____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+        /______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+        ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+        /______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+        ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+        /______/______/______/______/______/______/______/______/______/______/________
+        *******************************************************************************''')
+
+        print("Welcome to treasure island.\nYour mission is to find the treasure.")
+
+        first_input = input("Where you want to go? Left or Right: ").capitalize()
+
+        if first_input == "Left":
+            seconed_input = input(
+                "Now you come to the lake. There is island between the lake what do you want?\n wait for boat or swim into lake type swim or wait: ").capitalize()
+
+            if seconed_input == "Wait":
+                third_output = input(
+                    "You are arrived at island. There is a house with three doors\n One is yellow, one is red and one blue. Which color do you choose? type yellow or red or blue: ").capitalize()
+            else:
+                print("Attacked by trout. Game Over!🙁")
+
+            if third_output == "Yellow":
+                print("You Win!😎✨ The game is finished you got treasure congratulations.")
+            elif third_output == "Red":
+                print("Burned by fire.Game is over!🔥")
+            else:
+                print("Eaten by snake. Game is over!🐍")
         else:
-            print("Eaten by snake. ...")
-    else:
-        print("You are fall into a hole. ...")
+            print("You are fall into a hole. Game is over!☹️")
 ```
 **Explanation:**  
 - A simple text-based game where your choices decide if you find the treasure or face game-over scenarios.
@@ -197,9 +232,28 @@ def who_pay_the_bill():
 ### 8. Main Menu and User Choice
 
 ```python
-print("Welcome to AI tool. ...")
-name_input = input("Please enter your name ...")
-content_1 = input(f"Which content you want to choose {name_input} ...").capitalize()
+print("Welcome to AI tool. This is a simple AI tool which can do some tasks for you.")
+print(r'''                                
+   ,---,                  ,---, 
+  '  .' \              ,`--.' | 
+ /  ;    '.            |   :  : 
+:  :       \           :   |  ' 
+:  |   /\   \          |   :  | 
+|  :  ' ;.   :         '   '  ; 
+|  |  ;/  \   \        |   |  | 
+'  :  | \  \ ,'        '   :  ; 
+|  |  '  '--'          |   |  ' 
+|  :  :                '   :  | 
+|  | ,'                ;   |.'  
+`--''                  '---'                         
+                                ''')
+name_input = input("Please enter your name to continue this AI: ")
+content_1 = input(f"Which content you want to choose {name_input} 1.totalling the student marks 2.quiz 3.game 4.who pay the bill in restaurant\n"
+                  "and delete five files form desktop press 'T' for 1st option or press 'Q' for second option or press 'G' for third option\n"
+                  "or press 'W' for fourth option and press 'Del' for fifth option: ").capitalize()
+
+#Conditions: -
+
 if content_1 == "T":
     name_of_students()
 elif content_1 == "Q":
@@ -211,7 +265,7 @@ elif content_1 == "W":
 elif content_1 == "Del":
     file_deleter()
 else:
-    print("You have entered wrong input ...")
+    print("You have entered wrong input please try again later. Thank you for using this AI tool.😊")
 ```
 **Explanation:**  
 - Welcomes user, asks for their name.
@@ -219,6 +273,66 @@ else:
 - Calls the corresponding function, or prints an error if input is invalid.
 
 ---
+
+## ASCII arts 🖌️: - 
+
+```python
+       ___________ ____   ____                                                    
+    \__    ___/____ \_ |__ |  |   ____      ____   ____   ________________ _/  |_  ___________ 
+      |    |  \__  \ | __ \|  | _/ __ \    / ___\_/ __ \ /    \_  __ \__  \\   __\/  _ \_  __ \
+      |    |   / __ \| \_\ \  |_\  ___/   / /_/  >  ___/|   |  \  | \// __ \|  | (  <_> )  | \/
+      |____|  (____  /___  /____/\___  >  \___  / \___  >___|  /__|  (____  /__|  \____/|__|   
+                   \/    \/          \/  /_____/      \/     \/           \/          
+```
+```python
+   .----------------.  .----------------.  .----------------.  .----------------. 
+    | .--------------. || .--------------. || .--------------. || .--------------. |
+    | |    ___       | || | _____  _____ | || |     _____    | || |   ________   | |
+    | |  .'   '.     | || ||_   _||_   _|| || |    |_   _|   | || |  |  __   _|  | |
+    | | /  .-.  \    | || |  | |    | |  | || |      | |     | || |  |_/  / /    | |
+    | | | |   | |    | || |  | '    ' |  | || |      | |     | || |     .'.' _   | |
+    | | \  `-'  \_   | || |   \ `--' /   | || |     _| |_    | || |   _/ /__/ |  | |
+    | |  `.___.\__|  | || |    `.__.'    | || |    |_____|   | || |  |________|  | |
+    | |              | || |              | || |              | || |              | |
+    | '--------------' || '--------------' || '--------------' || '--------------' |
+     '----------------'  '----------------'  '----------------'  '----------------'
+```
+```python
+     *******************************************************************************
+                  |                   |                  |                     |
+         _________|________________.=""_;=.______________|_____________________|_______
+        |                   |  ,-"_,=""     `"=.|                  |
+        |___________________|__"=._o`"-._        `"=.______________|___________________
+                  |                `"=._o`"=._      _`"=._                     |
+         _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+        |                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+        |___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+                  |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+         _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+        |                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+        |___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+        ____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+        /______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+        ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+        /______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+        ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+        /______/______/______/______/______/______/______/______/______/______/________
+        *******************************************************************************'
+```
+```python
+   ,---,                  ,---, 
+  '  .' \              ,`--.' | 
+ /  ;    '.            |   :  : 
+:  :       \           :   |  ' 
+:  |   /\   \          |   :  | 
+|  :  ' ;.   :         '   '  ; 
+|  |  ;/  \   \        |   |  | 
+'  :  | \  \ ,'        '   :  ; 
+|  |  '  '--'          |   |  ' 
+|  :  :                '   :  | 
+|  | ,'                ;   |.'  
+`--''                  '---'     
+```
 
 ## 🌟 Fun Fact!
 
